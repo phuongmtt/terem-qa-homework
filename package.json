@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test-deploy": "npx serve"
+    "test-deploy": "npx serve -l 3000",
+    "test": "npx playwright test"
   },
   "keywords": [],
   "author": "",

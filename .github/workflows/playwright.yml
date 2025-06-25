@@ -1,4 +1,4 @@
-name: Playwright Tests
+name: Run Playwright Tests on new PRs and pushes
 on:
   push:
     branches: [ main, master ]
@@ -17,8 +17,20 @@ jobs:
       run: npm ci
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
+    - name: Deploy test environment
+      run: |
+        npm run test-deploy &
+        echo "Server PID: $!"
+        sleep 2
+      shell: bash
     - name: Run Playwright tests
-      run: npx playwright test
+      run: npm run test
+    - name: Stop test environment
+      if: always()
+      run: |
+        pkill -f serve
+        echo "Server stopped"
+      shell: bash
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
