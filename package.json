@@ -1,0 +1,17 @@
+{
+  "name": "terem-qa-homework",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test-deploy": "npx serve"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.53.1",
+    "@types/node": "^24.0.3",
+    "serve": "^14.2.4"
+  }
+}
