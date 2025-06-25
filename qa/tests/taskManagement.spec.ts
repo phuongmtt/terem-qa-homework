@@ -20,7 +20,7 @@ describe('Task Management Test', () => {
     }
   });
 
-  test('Verify ability to create, complete and delete task', async ({ pageObjects: {taskManagementPage} }) => {
+  test('Verify ability to create, complete and delete task @regression @AT-1', async ({ pageObjects: {taskManagementPage} }) => {
     await step('1. Open the Mini To-Do App and verify Home Page displayed', async () => {
       await taskManagementPage.open(urls.baseUrl);
       await taskManagementPage.verifyTaskListPageDisplayed();

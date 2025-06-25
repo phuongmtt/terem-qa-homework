@@ -24,7 +24,7 @@ jobs:
         sleep 2
       shell: bash
     - name: Run Playwright tests
-      run: npm run test
+      run: npm run test:regression
     - name: Stop test environment
       if: always()
       run: |
